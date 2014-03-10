@@ -3415,6 +3415,17 @@ AC_SUBST(KVA_LIBS)
 AM_CONDITIONAL([HAVE_KVA], [test "${have_kva}" = "yes"])
 
 dnl
+dnl MMAL vout plugin
+dnl
+AC_ARG_ENABLE(mmal-vout,
+  AS_HELP_STRING([--enable-mmal-vout],
+    [Multi-Media Abstraction Layer (MMAL) based vout plugin for Raspberry Pi (default disabled)]))
+if test "${enable_mmal_vout}" = "yes"; then
+  VLC_ADD_PLUGIN([mmal_vout])
+fi
+
+
+dnl
 dnl  Audio plugins
 dnl
 
