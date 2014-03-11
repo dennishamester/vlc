@@ -2147,6 +2147,16 @@ then
 fi
 
 dnl
+dnl MMAL codec plugin
+dnl
+AC_ARG_ENABLE(mmal-codec,
+  AS_HELP_STRING([--enable-mmal-codec],
+    [Multi-Media Abstraction Layer (MMAL) based codec plugin for Raspberry Pi (default disabled)]))
+if test "${enable_mmal_codec}" = "yes"; then
+  VLC_ADD_PLUGIN([mmal_codec])
+fi
+
+dnl
 dnl CrystalHD codec plugin
 dnl
 AC_ARG_ENABLE(crystalhd,
